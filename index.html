@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Для моей любимой 💖</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas for falling neon pink hearts -->
+  <canvas id="heartsCanvas"></canvas>
+
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <main class="container">
+    <!-- Screen 1: The Apology & The Question -->
+    <section id="screen-apology" class="card active">
+      <div class="card-glass-header">
+        <div class="neon-heart-icon">
+          <span>💖</span>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <h1 class="glow-title">Прости меня, пожалуйста...</h1>
+        
+        <div class="apology-text-wrapper">
+          <p class="apology-paragraph">
+            Я правда натворил много лишнего, и понимаю, что тогда, когда я им это сказал в матче, это была моя <span class="highlight-neon">САМАЯ</span> главная ошибка в жизни.
+          </p>
+          <p class="apology-paragraph">
+            Я не думал, что это так может тебя обидеть, я думал, что ты не так <span class="highlight-soft">отреагируешь</span>...
+          </p>
+          <p class="apology-paragraph">
+            И я очень сильно хочу помириться с тобой. Я козел и был максимально не прав.
+          </p>
+          <div class="question-box">
+            <p class="question-text">Пожалуйста, давай <span class="highlight-main">Пенис</span>? 🥹🥹</p>
+          </div>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btn-accept" class="neon-btn btn-accept" type="button">
+            <span class="btn-text">Пенис</span>
+            <span class="btn-icon">💖</span>
+            <div class="btn-sparkle"></div>
+          </button>
+
+          <button id="btn-decline" class="neon-btn btn-decline" type="button">
+            <span id="decline-text" class="btn-text">Нет</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2: Forgiveness, Promise & Response Message -->
+    <section id="screen-forgiven" class="card hidden">
+      <div class="card-glass-header">
+        <div class="neon-heart-icon big-pulse">
+          <span>❤️</span>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <h1 class="glow-title-success">Спасибо тебе, любимая! 🥹</h1>
+        
+        <div class="promise-box">
+          <p class="promise-text">
+            Спасибо за то что ты меня прощаешь, я больше не буду так вести себя, всё что будет сказано в войсе уйдёт со мной в могилу ❤️
+          </p>
+        </div>
+
+        <div class="reply-form-section">
+          <label for="reply-input" class="reply-label">
+            <span>Напиши мне что-нибудь (я сразу это увижу):</span>
+            <span class="label-emoji">💭</span>
+          </label>
+          <div class="textarea-wrapper">
+            <textarea 
+              id="reply-input" 
+              placeholder="Напиши сюда всё, что у тебя на душе..." 
+              rows="4"
+              maxlength="1000"
+            ></textarea>
+            <div class="char-counter"><span id="char-count">0</span>/1000</div>
+          </div>
+
+          <button id="btn-send-reply" class="neon-btn btn-send" type="button">
+            <span class="btn-text">Отправить Данилу</span>
+            <span class="btn-icon">💌</span>
+          </button>
+
+          <div id="status-message" class="status-box hidden"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
